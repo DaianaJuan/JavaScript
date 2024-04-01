@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilosArrays.css">
+    <title>Arrays-7-Matrices</title>
+</head>
+<body>
+    <header>
+        <h3>----------MENÚ----------</h3>
+        <nav>
+            <ol>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="index1.html">Condicionales</a></li>
+                <li><a href="index1-1.html">Ejercicios de Condicionales</a></li>
+                <li><a href="index2.html">Bucles-1-While</a></li>
+                <li><a href="index3.html">Bucles-2-Switch</a></li>
+                <li><a href="index4.html">Funciones-1</a></li>
+                <li><a href="index5.html">Funciones-2</a></li>
+                <li><a href="index6.html">Funciones Flecha</a></li>
+                <li><a href="index7.html">Recursividad</a></li>
+                <li><a href="index8.html">Arrays-1-Intro</a></li>
+                <li><a href="index9.html">Arrays-2-Métodos</a></li>
+                <li><a href="index10.html">Arrays-3-Iteración y recorridos de arrays</a></li>
+                <li><a href="index11.html">Arrays-4-Buscar en arrays</a></li>
+                <li><a href="index12.html">Arrays-5-Ordenar arrays</a></li>
+                <li><a href="index13.html">Arrays-6-filterYmap</a></li>
+                <li><a href="index14.html">Arrays-7-Matriz</a></li>
+                <li><a href="index15.html">Arrays-8-Algoritmos con arrays</a></li>
+            </ol>
+            <a href="https://www.aulascript.com/evaluar/ejercicios_basicos_1.htm">Página de ejercicios - principiantes</a><br>
+            <a href="https://github.com/DesafioLatam/guia-de-ejercicios-javascript/blob/master/ejercicios.md">Página de ejercicios Latam</a>   
+        </nav>
+        <h3>------------------------</h3>
+    </header>
+
+
+    <h1>ARRAYS-7</h1>
+    <h2>MATRICES</h2>
+    <p>
+        En matemáticas y en programación, una matriz se refiere a una colección de elementos dispuestos 
+        en filas y columnas. En términos más sencillos, y en JavaScript, podemos representar una matriz 
+        como un array de arrays.
+    </p>
+    <h3>Creación de Matrices</h3>
+    <p>Para empezar, aquí se muestra cómo se puede crear una matriz simple de 2x3 en JavaScript:</p>
+    <p class="codigo"><strong>
+        const matriz = [ <br>
+        [1, 2, 3], <br>
+        [4, 5, 6] <br>
+    ]
+    </strong></p>
+    <p>Las matrices no tienen por qué ser cuadradas. Pueden tener cualquier número de filas y columnas.</p>
+    <h3>Acceso a los Elementos de una Matriz</h3>
+    <p>Para acceder a los elementos de una matriz, necesitaremos utilizar dos índices: uno para la fila y 
+        otro para la columna.</p>
+    <p>Por ejemplo, si queremos acceder al número 6 en la matriz anterior, haríamos lo siguiente:</p>
+    <p class="codigo"><strong>
+        let numero = matriz[1][2]
+        console.log(numero) // -> 6
+    </strong></p>  
+    <p>
+        Aquí, el primer índice, [1], se refiere a la segunda fila (recuerda que los arrays en JavaScript 
+        tienen un índice base cero), y el segundo índice, [2], se refiere a la tercera columna.
+    </p>  
+    <h3>Iteración sobre Matrices</h3>
+    <p>Podemos utilizar bucles anidados para iterar sobre todos los elementos de una matriz. Aquí hay un 
+        ejemplo de cómo hacerlo utilizando un bucle for:</p>
+    <p class="codigo"><strong>
+        for (let i = 0; i < matriz.length; i++) { // {1} <br>
+            for (let j = 0; j < matriz[i].length; j++) { // {2} <br>
+                console.log(matriz[i][j]) <br>
+            } <br>
+        }
+    </strong></p>
+    <p>
+        En este ejemplo, el bucle externo recorre {1} cada fila de la matriz, mientras que el bucle 
+        interno {2} recorre cada elemento dentro de una fila específica.
+    </p>
+    <p>
+        Puedes usar otros bucles para iterar sobre una matriz, como un bucle while o un bucle for...of. 
+        También puedes utilizar el método forEach() de los arrays para iterar sobre una matriz, pero tendrás 
+        que anidar dos llamadas a forEach() para iterar sobre todos los elementos de la matriz.
+        NO PUSE EL EJEMPLO PORQUE ME PARECE MEJOR USAR FOR-----------------------------Atte. WasP.
+    </p>
+    <h3>Ejemplo práctico de Matrices</h3>
+    <p>Un ejemplo sencillo de entender pero muy útil es el juego del 3 en raya. En este juego, los jugadores 
+        se turnan para colocar sus fichas en una cuadrícula de 3x3.</p>
+    <p>El objetivo del juego es colocar tres fichas en una fila, columna o diagonal.</p>
+    <p>Para representar el tablero de juego, podemos utilizar una matriz de 3x3. Cada elemento de la matriz 
+        puede ser una cadena que represente una ficha:</p>
+    <p class="codigo"><strong>
+        const tablero = [ <br>
+        ['X', 'O', 'X'], <br>
+        ['O', 'X', 'O'], <br>
+        ['O', 'O', 'X'] <br>
+    ]
+    </strong></p>
+    <p>Ahora, para buscar si hay un ganador en el tablero, podemos utilizar un bucle for para iterar sobre 
+        cada fila y columna del tablero.</p>
+    <p>Si encontramos tres fichas iguales en una fila, columna o diagonal, entonces tenemos un ganador.</p> 
+    <p class="codigo"><strong>
+        // Verifica las líneas horizontales <br>
+        for (let i = 0; i < 3; i++) { <br>
+            if ( <br>
+                tablero[i][0] === tablero[i][1] && <br>
+                tablero[i][1] === tablero[i][2] <br>
+            ) { <br>
+        console.log(`El ganador es: ${tablero[i][0]}`); <br>
+            } <br>
+        } <br><br>
+
+        // Verifica las líneas verticales <br>
+        for (let i = 0; i < 3; i++) { <br>
+            if ( <br>
+                tablero[0][i] === tablero[1][i] && <br>
+                tablero[1][i] === tablero[2][i] <br>
+            ) { <br>
+        console.log(`El ganador es: ${tablero[0][i]}`); <br>
+            } <br>
+        } <br><br>
+
+        // Verifica la diagonal de arriba izquierda a derecha abajo <br>
+        if ( <br>
+            tablero[0][0] === tablero[1][1] && <br>
+            tablero[1][1] === tablero[2][2] <br>
+        ) { <br>
+        console.log(`El ganador es: ${tablero[0][0]}`); <br>
+        } <br><br>
+
+        // Verifica la diagonal de derecha arriba a izquierda abajo <br>
+        if ( <br>
+            tablero[0][2] === tablero[1][1] && <br>
+            tablero[1][1] === tablero[2][0] <br>
+        ) { <br>
+        console.log(`El ganador es: ${tablero[0][2]}`); <br>
+        } <br>
+    </strong></p> 
+    <h4>EJERCICIO</h4>  
+    <p>Recibimos una matriz de cadenas de texto. Tenemos que localizar la posición de la palabra 
+        "JavaScript" en la matriz y devolver su posición como un array de dos elementos: el índice de la 
+        fila y el índice de la columna.</p>
+    <p class="codigo"><strong>
+        const matrix = [ <br>
+            ['HTML', 'CSS', 'JavaScript'], <br>
+            ['Java', 'C++', 'Python'], <br>
+            ['Ruby', 'Go', 'Swift'] <br>
+        ] <br><br>
+
+        const position = findJavaScript(matrix) <br>
+        console.log(position) // -> [0, 2]
+    </strong></p>
+    <p>Si no encuentra la palabra debe devolver [-1, -1]. Usa el siguiente código como punto de partida:</p>
+    <p class="codigo"><strong>
+        function findJavaScript(matrix) { <br>
+            // tu código aquí <br>
+        }
+    </strong></p>
+
+
+
+
+
+
+    <script src="practica14.js"></script>
+</body>
+</html>

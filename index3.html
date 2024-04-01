@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos.css">
+    <title>Bucles-2</title>
+</head>
+<body>
+    <header>
+        <h3>----------MENÚ----------</h3>
+        <nav>
+            <ol>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="index1.html">Condicionales</a></li>
+                <li><a href="index1-1.html">Ejercicios de Condicionales</a></li>
+                <li><a href="index2.html">Bucles-1-While</a></li>
+                <li><a href="index3.html">Bucles-2-Switch</a></li>
+                <li><a href="index4.html">Funciones-1</a></li>
+                <li><a href="index5.html">Funciones-2</a></li>
+                <li><a href="index6.html">Funciones Flecha</a></li>
+                <li><a href="index7.html">Recursividad</a></li>
+                <li><a href="index8.html">Arrays-1-Intro</a></li>
+                <li><a href="index9.html">Arrays-2-Métodos</a></li>
+                <li><a href="index10.html">Arrays-3-Iteración y recorridos de arrays</a></li>
+                <li><a href="index11.html">Arrays-4-Buscar en arrays</a></li>
+                <li><a href="index12.html">Arrays-5-Ordenar arrays</a></li>
+                <li><a href="index13.html">Arrays-6-filterYmap</a></li>
+                <li><a href="index14.html">Arrays-7-Matriz</a></li>
+                <li><a href="index15.html">Arrays-8-Algoritmos con arrays</a></li>
+            </ol>
+            <a href="https://www.aulascript.com/evaluar/ejercicios_basicos_1.htm">Página de ejercicios - principiantes</a><br>
+            <a href="https://github.com/DesafioLatam/guia-de-ejercicios-javascript/blob/master/ejercicios.md">Página de ejercicios Latam</a>   
+        </nav>
+        <h3>------------------------</h3>
+    </header>
+
+    <h1>BUCLES-2</h1>
+
+    <h3>Función confirm</h3>
+    <p>La función confirm muestra un cuadro de diálogo con dos botones: "Aceptar" y "Cancelar". Si el usuario pulsa 
+        "Aceptar", la función devuelve true. Si pulsa "Cancelar", devuelve false.</p><br>
+        
+        <p class="codigo"><strong>confirm("¿Te gusta JavaScript?");</strong></p><br>
+        
+        <p>Llamar a la función confirm es una expresión y, por lo tanto, produce un valor que podemos guardar en 
+            una variable.
+        </p><br>
+
+    <p class="codigo">
+        <strong>let respuesta1 = confirm("¿Te gusta JavaScript?")<br>
+        console.log(respuesta) // -> true o false</strong>
+    </p>
+
+    <h3>DECLARACIONES</h3>
+    <P>Las declaraciones en JavaScript son sentencias que definen la creación de una variable, función o clase. 
+        Podríamos decir que las declaraciones son como las instrucciones que le damos a JavaScript para que haga algo.
+        Por ejemplo, una declaración de variable es una sentencia que le da un nombre y un valor a una variable.
+    </P>
+    <H3>EXPRESIONES</H3>
+    <p>Las expresiones en JavaScript son sentencias que producen un valor. Las expresiones pueden ser tan simples como un 
+        solo número o una cadena de texto, o tan complejas como el cálculo de una operación matemática, la evaluación de 
+        diferentes valores o la llamada a una función.
+    </p>
+    <h3>FOR</h3>
+    <P>La estructura de control for en JavaScript es muy útil para ejecutar una serie de instrucciones un número determinado de 
+        veces. A diferencia de while que usa una condición para determinar si se ejecuta o no el bloque de código, for usa un 
+        contador que se incrementa en cada iteración hasta que se cumple una condición.
+    </P>
+    <p>Sintaxis</p>
+    <p class="codigo"><strong>
+        for (inicialización; condición; actualización) {<br>
+        // código a ejecutar <br>
+        }</strong>
+    </p>
+
+    <p>¡¡¡Importante, fíjate que for tiene tres partes separadas por ;:</p>
+
+    <ul>
+        <li>La inicialización se realiza antes de que se inicie el bucle y se utiliza para declarar variables y 
+            asignar valores iniciales.</li>
+        <li>La condición es una expresión booleana que se evalúa antes de cada iteración del bucle. Si la expresión se 
+            evalúa como true, se ejecuta el bloque de código dentro del bucle. Si la expresión se evalúa como false, el 
+            bucle termina.</li>
+        <li>La actualización se utiliza para actualizar el valor de la variable de control del bucle después de cada 
+            iteración. Normalmente, se incrementa o decrementa el valor de la variable de control del bucle.</li>
+    </ul>
+
+    <h3>Bucles anidados For</h3>
+    <p>Imagina que quieres crear la tabla de multiplicar del 1 al 10. Para ello, necesitas un bucle que itere del 1 al 10 y, 
+        dentro de ese bucle, otro bucle que itere del 1 al 10. Esto se puede hacer con dos bucles for anidados (uno dentro del 
+        otro).
+    </p>
+
+    <h3>SWITCH</h3>
+    <p>En JavaScript, la sentencia switch es una estructura de control que nos permite ejecutar diferentes bloques de 
+        código dependiendo del valor de una expresión. Esta estructura es útil cuando queremos realizar diferentes acciones 
+        basadas en una única variable.
+    </p>
+    <p>Sintaxis</p>
+    <p>La sentencia switch evalúa una expresión, comparando el valor con los diferentes casos que le hemos definido. 
+        Si hay coincidencia ejecuta el bloque de código asociado. Para ello, se utiliza la sentencia break para separar cada 
+        caso y evitar que se sigan evaluando el resto de casos.
+    </p>
+    <p class="codigo"><strong>
+        switch (expresión) { <br>
+            case valor1: <br>
+              // código a ejecutar si la expresión coincide con valor1 <br>
+                break <br>
+
+            case valor2: <br>
+              // código a ejecutar si la expresión coincide con valor2 <br>
+                break <br>
+            default: <br>
+              // código a ejecutar si la expresión no coincide con ningún valor <br>
+                break <br>
+        } <br>
+    </strong></p>
+
+    <h3>getDay()</h3>
+    <p>En JavaScript podemos recuperar la información de la hora y 
+        la fecha usando el objeto Date. Este objeto tiene un método llamado getDay() que nos devuelve el día de la 
+        semana en formato numérico, siendo 0 el domingo y 6 el sábado.
+
+        Igual que console es un objeto. También Date lo es. Un objeto en JavaScript no es muy diferente a un objeto en 
+        la vida real. Tiene propiedades y funciones que podemos usar. En este caso, getDay() es una función que nos devuelve 
+        el día de la semana.
+    </p>
+    <p class="codigo"><strong>const dia = new Date().getDay()</strong></p>
+    <h3>Agrupando cases...</h3>
+    <p>En ocasiones, queremos que varios casos ejecuten el mismo código. En lugar de repetir el mismo código en cada 
+        caso, podemos agruparlos usando el mismo case para cada uno de ellos.
+    </p>
+    <h3>El patrón switch(true)</h3>
+    <p>Existe un patrón que se usa a veces con switch que es switch(true). Esto es, en lugar de evaluar una expresión, 
+        evalúa una condición ignorando por completo el valor de la expresión.
+    </p>
+
+
+
+    <script src="practica3.js"></script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos.css">
+    <title>Condicionales</title>
+</head>
+<body>
+    <header>
+        <h3>----------MENÚ----------</h3>
+        <nav>
+            <ol>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="index1.html">Condicionales</a></li>
+                <li><a href="index1-1.html">Ejercicios de Condicionales</a></li>
+                <li><a href="index2.html">Bucles-1-While</a></li>
+                <li><a href="index3.html">Bucles-2-Switch</a></li>
+                <li><a href="index4.html">Funciones-1</a></li>
+                <li><a href="index5.html">Funciones-2</a></li>
+                <li><a href="index6.html">Funciones Flecha</a></li>
+                <li><a href="index7.html">Recursividad</a></li>
+                <li><a href="index8.html">Arrays-1-Intro</a></li>
+                <li><a href="index9.html">Arrays-2-Métodos</a></li>
+                <li><a href="index10.html">Arrays-3-Iteración y recorridos de arrays</a></li>
+                <li><a href="index11.html">Arrays-4-Buscar en arrays</a></li>
+                <li><a href="index12.html">Arrays-5-Ordenar arrays</a></li>
+                <li><a href="index13.html">Arrays-6-filterYmap</a></li>
+                <li><a href="index14.html">Arrays-7-Matriz</a></li>
+                <li><a href="index15.html">Arrays-8-Algoritmos con arrays</a></li>
+            </ol>
+            <a href="https://www.aulascript.com/evaluar/ejercicios_basicos_1.htm">Página de ejercicios - principiantes</a><br>
+            <a href="https://github.com/DesafioLatam/guia-de-ejercicios-javascript/blob/master/ejercicios.md">Página de ejercicios Latam</a>   
+        </nav>
+        <h3>------------------------</h3>
+    </header>
+
+    <h1>CONDICIONALES</h1>
+
+    <h3>consol...</h3>
+    <p>console.error("Error en la consola");<br>
+        console.info("Informacion en la consola");<br>
+        console.warn("Advertencia en la consola");
+    </p>
+
+    <ul>
+        <li>IF</li>
+        <li>ELSE</li>
+        <li>ELSE IF</li>
+        <li>Anidación de condicionales</li>
+    </ul>
+
+    <h3>NOTAS</h3>
+
+    <P>En muchas ocasiones vas a querer evitar la anidación innecesaria de condicionales ya que se hacen difíciles
+        de leer y mantener. En estos casos es mejor utilizar operadores lógicos para crear la condición</P><br>
+    <p>Otra técnica muy interesante es la de guardar el resultado de la condición en una variable, 
+        para que tus condiciones sean mucho más legibles:
+    
+        <p class="codigo"><strong>
+        const edad = 17 <br>
+        const tieneCarnet = true <br>
+        const puedeConducir = edad >= 18 && tieneCarnet <br>
+        
+        if (puedeConducir) { <br>
+            console.log('Puedes conducir') <br>
+        } else { <br>
+            console.log('No puedes conducir') <br>
+        };</strong></p>
+    </p>
+    <p>¿Has visto cómo hemos mejorado la legibilidad de nuestro código? ¡Es mucho más fácil de leer y entender! 
+        A este tipo de técnica se le llama refactorización y consiste en mejorar el código sin cambiar su comportamiento.</p>
+    
+    <p>En los ejercicios también usé:</p>
+    <ul>
+        <li>variable.concat() -> para concatenar</li>
+        <li>variable.length -> permite saber la longitud</li>
+        <li>variable.charAt(0) -> posisición de la letra en una palabra o frase. (obtener la primera letra de la frase )</li>
+        <li>variable.charAt(variable.length - 1) -> la última letra</li>
+        <li>toLowerCase() -> ignora entre mayusculas y minusculas</li>
+    </ul>
+
+
+
+    <script src="practica1.js"></script>
+</body>
+</html>

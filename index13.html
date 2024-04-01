@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilosArrays.css">
+    <title>Arrays-6</title>
+</head>
+<body>
+    <header>
+        <h3>----------MENÚ----------</h3>
+        <nav>
+            <ol>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="index1.html">Condicionales</a></li>
+                <li><a href="index1-1.html">Ejercicios de Condicionales</a></li>
+                <li><a href="index2.html">Bucles-1-While</a></li>
+                <li><a href="index3.html">Bucles-2-Switch</a></li>
+                <li><a href="index4.html">Funciones-1</a></li>
+                <li><a href="index5.html">Funciones-2</a></li>
+                <li><a href="index6.html">Funciones Flecha</a></li>
+                <li><a href="index7.html">Recursividad</a></li>
+                <li><a href="index8.html">Arrays-1-Intro</a></li>
+                <li><a href="index9.html">Arrays-2-Métodos</a></li>
+                <li><a href="index10.html">Arrays-3-Iteración y recorridos de arrays</a></li>
+                <li><a href="index11.html">Arrays-4-Buscar en arrays</a></li>
+                <li><a href="index12.html">Arrays-5-Ordenar arrays</a></li>
+                <li><a href="index13.html">Arrays-6-filterYmap</a></li>
+                <li><a href="index14.html">Arrays-7-Matriz</a></li>
+                <li><a href="index15.html">Arrays-8-Algoritmos con arrays</a></li>
+            </ol>
+            <a href="https://www.aulascript.com/evaluar/ejercicios_basicos_1.htm">Página de ejercicios - principiantes</a><br>
+            <a href="https://github.com/DesafioLatam/guia-de-ejercicios-javascript/blob/master/ejercicios.md">Página de ejercicios Latam</a>   
+        </nav>
+        <h3>------------------------</h3>
+    </header>
+
+    <h1>ARRAYS-6</h1>
+    <h2>Transformación de Arrays</h2>
+    <p>
+        Ya hemos visto cómo podemos crear arrays, modificarlos y buscar en ellos. Ahora vamos a ver cómo podemos transformarlos. Esto es, cómo podemos crear nuevos arrays a partir de los que ya tenemos.
+    </p>
+    <h3>filter: Un nuevo Array con los elementos que cumplan una condición</h3>
+    <p>
+        El método filter crea un nuevo array con todos los elementos que devuelven true al ejecutar una función que le pasamos como parámetro.
+    </p>
+    <p>
+        Por ejemplo, podríamos filtrar en un nuevo array todos los números pares de un array de números:
+    </p>
+    <p class="codigo"><strong>
+        const numbers = [1, 2, 3, 4, 5, 6, 7] <br><br>
+
+        const evenNumbers = numbers.filter(function (number) { <br>
+        return number % 2 === 0 <br>
+    }) <br><br>
+
+    console.log(evenNumbers) // [2, 4, 6]
+    </strong></p>
+    <p>
+        O quedarnos con todas las cadenas de texto que tengan la letra a:
+    </p>
+    <p class="codigo"><strong>
+        const strings = ['hola', 'adiós', 'casa', 'coche', 'perro', 'gato'] <br><br>
+
+        // en las cadenas de texto podemos usar el método `includes` <br>
+        // para saber si una cadena contiene otra: <br>
+        const stringsWithA = strings.filter(string => string.includes('a'))  <br><br>
+        
+        console.log(stringsWithA) // ['hola', 'adiós', 'casa', 'gato']
+    </strong></p>
+    <h3>map: Un nuevo Array con los elementos transformados</h3>
+    <p>
+        El método map crea un nuevo array de la misma longitud que el original, pero con los elementos transformados por una función que le pasamos como parámetro. Así que la función recibirá cada elemento del array y tendremos que devolver el elemento transformado.
+    </p>
+    <p>
+        Por ejemplo, podríamos crear un array con el doble de cada número de un array de números:
+    </p>
+    <p class="codigo"><strong>
+        const numbers = [1, 2, 3] <br><br>
+
+        const doubleNumbers = numbers.map((number) => { <br>
+            return number * 2 <br>
+        }) <br><br>
+
+        console.log(doubleNumbers) // [2, 4, 6]
+    </strong></p>
+    <p>
+        O podríamos crear un array con la longitud de cada cadena de texto de un array de cadenas:
+    </p>
+    <p class="codigo"><strong>
+        const strings = ['hola', 'javascript', 'midu', 'programación'] <br><br>
+
+        const stringsLength = strings.map((string) => string.length) <br><br>
+
+        console.log(stringsLength) // [4, 10, 4, 12]
+    </strong></p>
+    <h3>map + filter: Un nuevo Array con los elementos transformados y filtrados</h3>
+    <p>
+        En JavaScript podemos crear un encadenamiento de métodos. De esta forma, si un método devuelve un array, podemos llamar a otro método sobre ese array sin necesidad de guardarlo en una variable.
+    </p>
+    <p>
+        Imagina que queremos crear un array con el doble de los números y sólo quedarnos con los que sean mayores que 5. Podríamos hacerlo así:
+    </p>
+    <p class="codigo"><strong>
+        const numbers = [1, 2, 3, 4, 5, 6, 7] <br><br>
+
+        const numsGreaterThanFive = numbers <br>
+        .map(number => number * 2) // [2, 4, 6, 8, 10, 12, 14] <br>
+        .filter(number => number > 5) // [6, 8, 10, 12, 14] <br><br>
+
+       console.log(numsGreaterThanFive) // [6, 8, 10, 12, 14]
+    </strong></p>
+    <p>
+        También podríamos hacerlo al revés, primero filtrando y luego transformando. Por ejemplo, filtrar los números pares y luego multiplicarlos por 2:
+    </p>
+    <p class="codigo"><strong>
+        const numbers = [1, 2, 3, 4, 5, 6, 7] <br><br>
+
+        const doubleEvenNumbers = numbers <br>
+        .filter(number => number % 2 === 0) // [2, 4, 6] <br>
+        .map(number => number * 2) // [4, 8, 12] <br><br>
+
+        console.log(doubleEvenNumbers) // [4, 8, 12]
+    </strong></p>
+    <h3>reduce: Un único valor a partir de un array</h3>
+    <p>
+        El método reduce es un poco más complejo que los anteriores. Este método te permite crear un único valor a partir de un Array.
+    </p>
+    <p>
+        Recibe dos parámetros: una función que se ejecutará por cada elemento y un valor inicial, opcional, que será donde podremos acumular los valores.
+    </p>
+    <p>
+        El primer parámetro de reduce, que es la función que se ejecutará por cada elemento, recibe tres parámetros:
+    </p>
+    <ul>
+        <li>El acumulador: el valor que se va a ir acumulando en cada iteración</li>
+        <li>El elemento actual: el elemento del Array que estamos iterando en ese momento.</li>
+        <li>El índice: la posición del elemento actual en el Array.</li>
+    </ul>
+    <p>Y debe devolver el valor que se va a acumular en cada iteración.</p>
+    <p>Un caso de uso muy típico de reduce es sumar todos los elementos de un Array:</p>
+    <p class="codigo"><strong>
+        const numbers = [1, 2, 3] <br><br>
+
+        const sum = numbers.reduce((accumulator, currentNumber) => { <br>
+        return accumulator + currentNumber <br>
+        }, 0) // <- el 0 es el valor inicial <br><br>
+
+        console.log(sum) // 6
+    </strong></p>
+    <p>Vamos a ver qué está pasando en cada iteración:</p>
+    <ul>
+        <li>Iteración 1: el acumulador vale 0 (ya que 0 es el valor inicial) y el elemento actual vale 1. Así que devolvemos 0 + 1 = 1</li>
+        <li>Iteración 2: el acumulador vale 1 (el valor que devolvimos en la iteración anterior) y el elemento actual vale 2. Así que devolvemos 1 + 2 = 3</li>
+        <li>Iteración 3: el acumulador vale 3 (el valor que devolvimos en la iteración anterior) y el elemento actual vale 3. Así que devolvemos 3 + 3 = 6</li>
+    </ul>
+    <p>Por lo tanto, el valor final de sum es 6.</p>
+    <p>
+        ¿Recuerdas que hemos visto antes cómo usar map y filter juntos? Pues podrías usar reduce para tener que evitar crear un array intermedio. Por ejemplo, imagina que queremos doblar los números pares y sólo quedarnos con los mayores de 5 (como hicimos en el ejemplo anterior):
+    </p>
+    <p class="codigo"><strong>
+        const numbers = [1, 2, 3, 4, 5, 6, 7] <br><br>
+
+        const doubleEvenNumbers = numbers.reduce((accumulator, currentNumber) => {  <br>
+        const isEven = currentNumber % 2 === 0  <br>
+        const doubled = currentNumber * 2  <br>
+        const isGreaterThanFive = doubled > 5 <br><br>
+
+        // si es par y mayor que 5, lo añadimos al array <br>
+        if (isEven && isGreaterThanFive) {  <br>
+        // para ello devolvemos un nuevo array con el valor actual <br>
+        return accumulator.concat(doubled) <br>
+    } else { <br>
+        // si no, devolvemos lo que ya teníamos <br>
+        return accumulator <br>
+    } <br>
+    }, []) // <- el array vacío es el valor inicial <br><br>
+
+    console.log(doubleEvenNumbers) // [8, 12]
+    </strong></p>
+    <p>
+        Lo interesante en este caso es que no hemos tenido que crear un array intermedio con map y filter. Hemos ido acumulando los valores que nos interesaban en cada iteración y los que no nos interesaban los hemos descartado devolviendo lo que ya teníamos en el acumulador.
+    </p>
+    <p>
+        Ten cuidado con reduce. Como puedes ver, su carga cognitiva es mayor que la de map y filter. Así que si puedes usar map y filter para hacer lo mismo, hazlo. Sólo usa reduce cuando no te quede más remedio.
+    </p>
+    <h4>EJERCICIO</h4>
+    <p>
+        Recibes dos parámetros: una lista de palabras words y una palabra word. Primero, busca el índice de la palabra en la lista. Después, usa ese índice (que será un número) y devuelve todas las palabras de words que sean más largas (length) que el número del índice.
+    </p>
+    <p>
+        Ten en cuenta que la palabra word siempre existirá en el array, por lo que no es necesario comprobar si existe o no.
+    </p>
+    <p class="codigo"><strong>
+        function buscaPalabras(words, word) { <br>
+            // tu código aquí <br>
+        }
+    </strong></p>
+
+
+
+    <script src="practica13.js"></script>
+</body>
+</html>

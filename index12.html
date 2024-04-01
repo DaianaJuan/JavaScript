@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilosArrays.css">
+    <title>Arrays-5</title>
+</head>
+<body>
+    <header>
+        <h3>----------MENÚ----------</h3>
+        <nav>
+            <ol>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="index1.html">Condicionales</a></li>
+                <li><a href="index1-1.html">Ejercicios de Condicionales</a></li>
+                <li><a href="index2.html">Bucles-1-While</a></li>
+                <li><a href="index3.html">Bucles-2-Switch</a></li>
+                <li><a href="index4.html">Funciones-1</a></li>
+                <li><a href="index5.html">Funciones-2</a></li>
+                <li><a href="index6.html">Funciones Flecha</a></li>
+                <li><a href="index7.html">Recursividad</a></li>
+                <li><a href="index8.html">Arrays-1-Intro</a></li>
+                <li><a href="index9.html">Arrays-2-Métodos</a></li>
+                <li><a href="index10.html">Arrays-3-Iteración y recorridos de arrays</a></li>
+                <li><a href="index11.html">Arrays-4-Buscar en arrays</a></li>
+                <li><a href="index12.html">Arrays-5-Ordenar arrays</a></li>
+                <li><a href="index13.html">Arrays-6-filterYmap</a></li>
+                <li><a href="index14.html">Arrays-7-Matriz</a></li>
+                <li><a href="index15.html">Arrays-8-Algoritmos con arrays</a></li>
+            </ol>
+            <a href="https://www.aulascript.com/evaluar/ejercicios_basicos_1.htm">Página de ejercicios - principiantes</a><br>
+            <a href="https://github.com/DesafioLatam/guia-de-ejercicios-javascript/blob/master/ejercicios.md">Página de ejercicios Latam</a>   
+        </nav>
+        <h3>------------------------</h3>
+    </header>
+
+    <h1>ARRAYS-5</h1>
+    <h2>Ordenamiento de Arrays</h2>
+    <p>
+        JavaScript proporciona un método incorporado en arrays llamado .sort() para ordenar sus elementos. Por defecto no es muy útil pero puedes personalizar su comportamiento para que ordene los elementos de la manera que necesites.
+    </p>
+    <h3>Ordenamiento básico con sort()</h3>
+    <p>
+        Por defecto, .sort() hace una ordenación un poco extraña:
+    </p>
+    <p class="codigo"><strong>
+        let numeros = [5, 10, 2, 25, 7] <br>
+        numeros.sort() <br>
+        console.log(numeros) // [10, 2, 25, 5, 7]
+    </strong></p>
+    <p>
+        ¿Qué ha pasado? Este comportamiento puede resultar confuso cuando se trabaja con números, ya que .sort() ordenará los números en función de su valor como cadena de texto, no de su valor numérico. <br>
+        Por suerte, podemos arreglarlo...
+    </p>
+    <h3>Ordenamiento personalizado con sort()</h3>
+    <p>
+        Para personalizar cómo sort() ordena los elementos, puedes pasar una función de comparación como argumento. La función de comparación debe devolver:
+    </p>
+    <ul>
+        <li>Un valor negativo si el primer argumento debe aparecer antes que el segundo.</li>
+        <li>Un valor positivo si el segundo argumento debe aparecer antes que el primero.</li>
+        <li>Cero si ambos argumentos son iguales.</li>
+    </ul>
+    <p>
+        Por ejemplo, para ordenar los números de menor a mayor, puedes usar la siguiente función de comparación:
+    </p>
+    <p class="codigo"><strong>
+        let numeros = [5, 10, 2, 25, 7] <br><br>
+
+        numeros.sort(function(a, b) { <br>
+            return a - b <br>
+        }) <br><br>
+
+        console.log(numeros) // [2, 5, 7, 10, 25]
+    </strong></p>
+    <p>
+        Para ordenarlos de manera descendente, de mayor a menor, deberías cambiar el orden del return:
+    </p>
+    <p class="codigo"><strong>
+        let numeros = [5, 10, 2, 25, 7] <br><br>
+
+        numeros.sort(function(a, b) { <br>
+            return b - a <br>
+        }) <br><br>
+
+        console.log(numeros) // [25, 10, 7, 5, 2]
+    </strong></p>
+    <p>
+        Puedes usar una arrow function para simplificar el código:
+    </p>
+    <p class="codigo"><strong>
+        let numeros = [5, 10, 2, 25, 7] <br>
+
+        numeros.sort((a, b) => a - b)
+    </strong></p>
+    <h3>sort() y toSorted()</h3>
+    <p>
+        Como ves, .sort() modifica el array original. Si quieres obtener un array ordenado sin modificar el original, puedes usar el método .toSorted(). Sólo ten en cuenta que, ahora mismo, su soporte en navegadores es limitado .
+    </p>
+    <p class="codigo"><strong>
+        let numeros = [5, 10, 2, 25, 7] <br><br>
+
+        let numerosOrdenados = numeros.toSorted((a, b) => { <br>
+            return a - b <br>
+        }) <br><br>
+
+        console.log(numerosOrdenados) // [2, 5, 7, 10, 25] <br>
+        console.log(numeros) // [5, 10, 2, 25, 7]
+    </strong></p>
+    <p>
+        También podrías usar el operador de propagación (...) para crear una copia del array original y ordenarla:
+    </p>
+    <p class="codigo"><strong>
+        let numeros = [5, 10, 2, 25, 7] <br><br>
+
+        const copiaNumeros = [...numeros] <br>
+        // ordenamos la copia y no el original <br>
+        copiaNumeros.sort((a, b) => a - b) <br><br>
+
+        console.log(copiaNumeros) // [2, 5, 7, 10, 25] <br>
+        console.log(numeros) // [5, 10, 2, 25, 7]
+    </strong></p>
+    <h4>EJERCICIO</h4>
+    <P>
+        Recibes una lista de números. Debes ordenar los números de menor a mayor según su valor absoluto. Eso quiere decir que los números negativos pierden el signo y se ordenan como si fueran positivos.
+    </P>
+    <p>
+        Por ejemplo, si recibes [5, -10, -2, -25, -7] deberías devolver [-2, 5, -7, -10, -25].
+    </p>
+    <p>
+        Puedes usar el método Math.abs(num) para obtener el valor absoluto de un número.
+    </p>
+
+
+    <script src="practica12.js"></script>
+</body>
+</html>

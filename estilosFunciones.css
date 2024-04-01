@@ -1,0 +1,14 @@
+html{
+    background-color: rgb(146, 201, 211);
+    padding: 3rem;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+h3{
+    color: crimson;
+}
+
+.codigo{
+    color: red;
+}
+

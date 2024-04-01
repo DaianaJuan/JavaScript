@@ -1,0 +1,22 @@
+html{
+    background-color: rgb(255, 255, 111);
+    padding: 3rem;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+h3{
+    color: crimson;
+}
+
+.codigo{
+    color: red;
+}
+
+h3 .metodo{
+    color: aquamarine;
+}
+
+.sub{
+    text-decoration: underline;
+    color: rgb(108, 19, 192);
+}

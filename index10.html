@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilosArrays.css">
+    <title>Arrays-3</title>
+</head>
+<body>
+    <header>
+        <h3>----------MENÚ----------</h3>
+        <nav>
+            <ol>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="index1.html">Condicionales</a></li>
+                <li><a href="index1-1.html">Ejercicios de Condicionales</a></li>
+                <li><a href="index2.html">Bucles-1-While</a></li>
+                <li><a href="index3.html">Bucles-2-Switch</a></li>
+                <li><a href="index4.html">Funciones-1</a></li>
+                <li><a href="index5.html">Funciones-2</a></li>
+                <li><a href="index6.html">Funciones Flecha</a></li>
+                <li><a href="index7.html">Recursividad</a></li>
+                <li><a href="index8.html">Arrays-1-Intro</a></li>
+                <li><a href="index9.html">Arrays-2-Métodos</a></li>
+                <li><a href="index10.html">Arrays-3-Iteración y recorridos de arrays</a></li>
+                <li><a href="index11.html">Arrays-4-Buscar en arrays</a></li>
+                <li><a href="index12.html">Arrays-5-Ordenar arrays</a></li>
+                <li><a href="index13.html">Arrays-6-filterYmap</a></li>
+                <li><a href="index14.html">Arrays-7-Matriz</a></li>
+                <li><a href="index15.html">Arrays-8-Algoritmos con arrays</a></li>
+            </ol>
+            <a href="https://www.aulascript.com/evaluar/ejercicios_basicos_1.htm">Página de ejercicios - principiantes</a><br>
+            <a href="https://github.com/DesafioLatam/guia-de-ejercicios-javascript/blob/master/ejercicios.md">Página de ejercicios Latam</a>   
+        </nav>
+        <h3>------------------------</h3>
+    </header>
+
+    <h1>ARRAYS-3</h1>
+    <h2>Iteración de Arrays</h2>
+    <h3>Bucle while</h3>
+    <p>
+        El bucle while vimos que permitía ejecutar un bloque de código mientras una condición era verdadera. En el caso de la iteración de arrays, la condición generalmente se basa en el índice del elemento.
+    </p>
+    <p>
+        Podemos, por ejemplo, crear una variable con let para guardar un puntero al índice del elemento que estamos iterando. En cada iteración, podemos incrementar el valor de la variable en 1, para que en la siguiente iteración se imprima el siguiente elemento.
+    </p>
+    <p class="codigo"><strong>
+
+        let frutas = ['🍎', '🍌', '🍓'] <br>
+        let i = 0 // lo usaremos como índice <br> <br>
+
+        while (i < frutas.length) { <br>
+            console.log(frutas[i]) // imprime el elemento en la posición i <br>
+            i++ // incrementamos el índice en 1 para la siguiente iteración <br>
+        }
+
+    </strong></p>
+    <h3>Bucle for</h3>
+    <p>
+        El bucle for nos permitía ejecutar un bloque de código un número determinado de veces. En el caso de la iteración de arrays, podemos usarlo para recorrer cada uno de los elementos del array, usando la longitud del array como condición.
+    </p>
+    <p class="codigo"><strong>
+
+        let frutas = ['🍎', '🍌', '🍓'] <br><br>
+
+        for (let i = 0; i < frutas.length; i++) { <br>
+            console.log(frutas[i]) // imprime el elemento en la posición i <br>
+        }
+
+    </strong></p>
+    <p>
+        También podrías recorrer el array en orden inverso, empezando desde el último elemento hasta el primero, usando i-- en lugar de i++.
+    </p>
+    <p class="codigo"><strong>
+
+        let frutas = ['🍎', '🍌', '🍓'] <br><br>
+
+        for (let i = frutas.length - 1; i >= 0; i--) { <br>
+            console.log(frutas[i]) // imprime el elemento en la posición i <br>
+        }
+
+    </strong></p>
+    <h3>Bucle for...of</h3>
+    <p>
+        Además de while y for, existe otra estructura de control que nos permite iterar sobre los elementos de un array: for...of. Esta estructura de control es más simple que for, ya que no necesitamos crear una variable para guardar el índice del elemento que estamos iterando. <br>
+
+        Es mucho más sencilla y fácil de entender:
+    </p>
+    <p class="codigo"><strong>
+
+        let frutas = ['🍎', '🍌', '🍓'] <br><br>
+
+        for (let fruta of frutas) { <br>
+            console.log(fruta) // imprime el elemento en la posición i <br>
+        }
+
+    </strong></p>
+    <p>
+        Hay algunas limitaciones en el uso de for...of. Por ejemplo, no podemos usarlo para recorrer un array en orden inverso y tampoco tenemos acceso al índice del elemento que estamos iterando.
+    </p>
+    <h3>El método array.forEach()</h3>
+    <p>
+        Otro metodo es array.forEach(), que nos permite ejecutar una function para cada uno de los elementos del array. Esta función recibe como parámetros el elemento que se está iterando en ese momento, el índice del elemento y el propio array.
+    </p>
+    <p class="codigo"><strong>
+
+        let frutas = ['🍎', '🍌', '🍓'] <br><br>
+
+        frutas.forEach(function (fruta, index, originalArray) { <br>
+            console.log(fruta) // imprime el elemento en la posición i <br>
+        })
+
+    </strong></p>
+    <p>
+        Usando una arrow function e indicando sólo los parámetros que necesitamos de nuestra función podemos simplificarlo aún más:
+    </p>
+    <p class="codigo"><strong>
+
+        let frutas = ['🍎', '🍌', '🍓']
+
+        frutas.forEach((fruta) => {
+            console.log(fruta) // imprime el elemento en la posición i
+        })
+
+    </strong></p>
+    <p>
+        Algo importante es que array.forEach() no devuelve nada, por lo que no podemos asignar el resultado a una variable.
+    </p>
+    <p>
+        Cada uno de estos métodos tiene sus propios casos de uso. for y while son más generales y te permiten controlar el índice manualmente, lo que es útil si necesitas saltar a índices específicos, cambiar el orden de iteración o salir del bucle antes de que se complete.
+    </p>
+    <p>
+        for...of es más fácil de usar cuando solo necesitas los valores de un array y no te importa el índice. Es especialmente útil también cuando estás trabajando con iterables que no son arrays, como las cadenas de caracteres o los conjuntos (sets).
+    </p>
+    <p>
+        Finalmente, forEach es una forma muy eficiente y legible de iterar sobre un array si no necesitas break y si no necesitas controlar manualmente el índice.
+    </p>
+
+
+
+
+
+
+
+    <script src="practica10.js"></script>
+</body>
+</html>

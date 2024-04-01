@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilosFunciones.css">
+    <title>Funciones-2</title>
+</head>
+<body>
+    <header>
+        <h3>----------MENÚ----------</h3>
+        <nav>
+            <ol>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="index1.html">Condicionales</a></li>
+                <li><a href="index1-1.html">Ejercicios de Condicionales</a></li>
+                <li><a href="index2.html">Bucles-1-While</a></li>
+                <li><a href="index3.html">Bucles-2-Switch</a></li>
+                <li><a href="index4.html">Funciones-1</a></li>
+                <li><a href="index5.html">Funciones-2</a></li>
+                <li><a href="index6.html">Funciones Flecha</a></li>
+                <li><a href="index7.html">Recursividad</a></li>
+                <li><a href="index8.html">Arrays-1-Intro</a></li>
+                <li><a href="index9.html">Arrays-2-Métodos</a></li>
+                <li><a href="index10.html">Arrays-3-Iteración y recorridos de arrays</a></li>
+                <li><a href="index11.html">Arrays-4-Buscar en arrays</a></li>
+                <li><a href="index12.html">Arrays-5-Ordenar arrays</a></li>
+                <li><a href="index13.html">Arrays-6-filterYmap</a></li>
+                <li><a href="index14.html">Arrays-7-Matriz</a></li>
+                <li><a href="index15.html">Arrays-8-Algoritmos con arrays</a></li>
+            </ol>
+            <a href="https://www.aulascript.com/evaluar/ejercicios_basicos_1.htm">Página de ejercicios - principiantes</a><br>
+            <a href="https://github.com/DesafioLatam/guia-de-ejercicios-javascript/blob/master/ejercicios.md">Página de ejercicios Latam</a>   
+        </nav>
+        <h3>------------------------</h3>
+    </header>
+
+
+    <h1>FUNCIONES-2</h1>
+    <h3>Parámetros</h3>
+    <p>Hasta ahora hemos visto como crear funciones y cómo llamarlas. Pero para poder desbloquear todo el potencial de 
+        las funciones, necesitamos que puedan recibir parámetros. Esto es, que su comportamiento pueda cambiar según 
+        los datos que le pasemos.
+    </p>
+    <p>Imagina que queremos que nuestra función de saludar, pueda saludar a cualquier persona, no solo a Miguel. 
+        Para ello, podemos hacer que la función acepte un parámetro, que será el nombre de la persona a la que queremos 
+        saludar.
+    </p>
+    <h3>Parámetros y argumentos</h3>
+    <p>En el ejemplo anterior, hemos visto que podemos pasarle valores a la función cuando la llamamos. A estos 
+        valores se les llama argumentos. Y a los valores que recibe la función, se les llama parámetros.
+    </p>
+    <h3>El orden de los parámetros importa</h3>
+    <p>Algo muy importante, y un error muy común al empezar a crear funciones, es olvidar que el orden de los 
+        parámetros importa.
+    </p>
+
+    <h1>FUNCIONES-3</h1>
+    <h3>Function Expression</h3>
+    <p>Hasta ahora hemos visto cómo podemos declarar funciones usando la palabra clave function.</p>
+    <p>Sin embargo, existen dos formas más de declarar funciones en JavaScript: function expression y arrow function. 
+        En este caso, hablemos de la primera.
+    </p>
+    <h4>¿Qué es una function expression?</h4>
+    <p>Una function expression es una función que se asigna a una variable. Por ejemplo:</p>
+    <p class="codigo"><strong>
+        // esto es una function expression <br>
+        const sum = function (a, b) { <br>
+        return a + b <br>
+        } <br>
+
+        // esto es una declaración de función <br>
+        function sum(a, b) { <br>
+        return a + b <br>
+    }
+    </strong></p>
+    <p>
+        La function no tiene nombre en la function expression! Cuando una función no tiene nombre se le llama función 
+        anónima. Aunque en este caso, la función está asignada a una variable que sí tiene nombre y por eso podremos 
+        utilizarla más adelante.
+    </p>
+    <p>
+        Con la function expression, a la función se asigna a la variable sum. Esto significa que podemos llamar 
+        a la función usando el nombre de la variable:
+    </p>
+    <p class="codigo"><strong>sum(1, 2) // 3</strong></p>
+    <p>
+        El comportamiento es muy similar al de una función declarada con la palabra clave function. Sin embargo, 
+        hay una diferencia muy importante entre ambas que debes conocer: el hoisting.
+    </p>
+    <h3>Hoisting</h3>
+    <p>
+        El hoisting es un término que se usa para describir cómo JavaScript parece que mueve las declaraciones 
+        funciones al principio del código, de forma que las puedes usar incluso antes de declararlas. Por ejemplo:
+    </p>
+    <p class="codigo"><strong>
+        sum(1, 2) // 3 <br>
+
+        function sum(a, b) { <br>
+        return a + b <br>
+    }
+    </strong></p>
+    <p>
+        Aquí primero usamos la función y la declaramos luego. ¡Y funciona! ¿Cómo puede ser? ¿No debería darnos un error ya que la función todavía no existe?
+    </p>
+    <p>
+        Lo que está pasando es que JavaScript asigna en memoria durante la fase de compilación las declaraciones de funciones y por eso al ejecutarse el código tiene acceso a esa posición de memoria a la que se refiere la función.
+    </p>
+    <p>
+        Eso sería la explicación técnica del hoisting, pero si te sirve de ayuda, puedes pensar que es como si JavaScript moviese las declaraciones de funciones al principio del código.
+    </p>
+    <h4>¿Y qué pasa con las function expression?</h4>
+    <p>
+        No se aplica el hoisting. Por ejemplo:
+    </p>
+    <p class="codigo"><strong>
+        sum(1, 2) // ❌ ReferenceError: sum is not defined <br>
+
+        const sum = function (a, b) { <br>
+        return a + b <br>
+        }
+    </strong></p>
+    
+
+    <script src="practica5.js"></script>
+</body>
+</html>

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilosArrays.css">
+    <title>Arrays-4</title>
+</head>
+<body>
+    <header>
+        <h3>----------MENÚ----------</h3>
+        <nav>
+            <ol>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="index1.html">Condicionales</a></li>
+                <li><a href="index1-1.html">Ejercicios de Condicionales</a></li>
+                <li><a href="index2.html">Bucles-1-While</a></li>
+                <li><a href="index3.html">Bucles-2-Switch</a></li>
+                <li><a href="index4.html">Funciones-1</a></li>
+                <li><a href="index5.html">Funciones-2</a></li>
+                <li><a href="index6.html">Funciones Flecha</a></li>
+                <li><a href="index7.html">Recursividad</a></li>
+                <li><a href="index8.html">Arrays-1-Intro</a></li>
+                <li><a href="index9.html">Arrays-2-Métodos</a></li>
+                <li><a href="index10.html">Arrays-3-Iteración y recorridos de arrays</a></li>
+                <li><a href="index11.html">Arrays-4-Buscar en arrays</a></li>
+                <li><a href="index12.html">Arrays-5-Ordenar arrays</a></li>
+                <li><a href="index13.html">Arrays-6-filterYmap</a></li>
+                <li><a href="index14.html">Arrays-7-Matriz</a></li>
+                <li><a href="index15.html">Arrays-8-Algoritmos con arrays</a></li>
+            </ol>
+            <a href="https://www.aulascript.com/evaluar/ejercicios_basicos_1.htm">Página de ejercicios - principiantes</a><br>
+            <a href="https://github.com/DesafioLatam/guia-de-ejercicios-javascript/blob/master/ejercicios.md">Página de ejercicios Latam</a>   
+        </nav>
+        <h3>------------------------</h3>
+    </header>
+
+    <h1>ARRAYS-4</h1>
+    <h2>Búsqueda en Arrays con sus métodos</h2>
+    <p>
+        Existen varios métodos en JavaScript que te permiten, específicamente, buscar dentro de un Array. Estos métodos incluyen indexOf, some, every, find, findIndex e includes.
+    </p>
+    <p>
+        Cada uno de estos métodos tiene un propósito específico y una funcionalidad única. Vamos a explorar cada uno de ellos utilizando un Array de emojis como ejemplo.
+    </p>
+    <p class="codigo"><strong>
+        const emojis = ['✨', '🥑', '😍']
+    </strong></p>
+    <h3 class="metodo">(1) indexOf: ¿En qué posición está el elemento?</h3>
+    <p>
+        El método indexOf te permite encontrar la posición de un elemento dentro de un Array. Si el elemento no existe, entonces retorna -1.
+    </p>
+    <p class="codigo"><strong>
+        const emojis = ['✨', '🥑', '😍'] <br>
+
+        const posicionCorazon = emojis.indexOf('😍') <br>
+
+        console.log(posicionCorazon) // -> 2
+    </strong></p>
+    <h3 class="metodo" >(2) includes: ¿El elemento existe en el Array?</h3>
+    <p>
+        El método includes determina si un Array incluye un determinado elemento, devolviendo true o false según corresponda.
+    </p>
+    <p class="codigo"><strong>
+        const emojis = ['✨', '🥑', '😍'] <br>
+
+        const tieneCorazon = emojis.includes('😍') <br>
+
+        console.log(tieneCorazon) // -> true
+    </strong></p>
+    <p>
+        Es la forma más sencilla y corta de buscar un elemento específico dentro de un Array. Sin embargo, si queremos revisar si un Array contiene un elemento que cumpla con una condición, entonces tenemos que utilizar otros métodos...
+    </p>
+    <p>
+        El método .includes() también funciona con las cadenas de texto. Puedes utilizarlo para buscar una subcadena dentro de una cadena de texto: 'Hola mundo'.includes('Hola') // -> true
+    </p>
+    <h3 class="metodo">(3) some: ¿Alguno de los elementos cumple con la condición?</h3>
+    <p>
+        El método some te permite verificar si al menos uno de los elementos de un Array cumple con una condición.
+    </p>
+    <p>
+        Para utilizarlo, le pasas una función como argumento. Esta función recibe como argumento cada uno de los elementos del Array y debe retornar un valor booleano.
+    </p>
+    <p>
+        Si al menos uno de los elementos retorna true, entonces el método some retorna true. Si ninguno de los elementos retorna true, entonces el método some retorna false.
+    </p>
+    <p class="codigo"><strong>
+        const emojis = ['✨', '🥑', '😍'] <br><br>
+
+        const tieneCorazon = emojis.some(emoji => emoji === '😍') <br>
+        console.log(tieneCorazon) // -> true
+    </strong></p>
+    <p>
+        ¡Pero si esto ya lo podíamos hacer con includes! Sí, pero some es mucho más potente...
+
+        Podemos crear funciones más complejas para pasarle al método some. Por ejemplo, podemos crear una función que verifique si un Array contiene un elemento que sea un string de más de 3 caracteres.
+    </p>
+    <p class="codigo"><strong>
+        const names = ['Leo', 'Isa', 'Ían', 'Lea'] <br><br>
+
+        const tieneNombreLargo = names.some(name => name.length > 3) <br>
+        console.log(tieneNombreLargo) // -> false
+    </strong></p>
+    <p>
+        Algo importante a tener en cuenta es que el método some deja de iterar sobre el Array en cuanto encuentra un elemento que cumple con la condición. Por ejemplo, si tenemos un Array de 10 elementos y el elemento número 3 cumple con la condición, el método some no va a iterar sobre los 7 elementos restantes:
+    </p>
+    <p class="codigo"><strong>
+        const numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] <br><br>
+
+        const tieneNumeroMayorA5 = numbers.some(number => { <br>
+            console.log(`Estoy iterando sobre el número ${number}`) // -> Imprime hasta el número 6 <br>
+        return number > 5 <br>
+        }) <br>
+
+        console.log(tieneNumeroMayorA5) // -> true
+    </strong></p>
+    <h3 class="metodo">(4) every: ¿Todos los elementos cumplen con la condición?</h3>
+    <p>
+        El método every te permite verificar si todos los elementos de un Array cumplen con una condición. Es similar a some, pero en lugar de verificar si al menos uno de los elementos cumple con la condición, los verifica todos.
+    </p>
+    <p>
+        Para utilizarlo, le pasas una función como argumento. Esta función recibe como argumento el elemento del array que está iterando en ese momento y debe retornar un valor booleano para saber si el elemento cumple con la condición.
+    </p>
+    <p>
+        Si todos los elementos retornan true, entonces el método every retorna true. Si al menos uno de los elementos retorna false, entonces el método every retorna false.
+    </p>
+    <p class="codigo"><strong>
+
+        // ¿Todos los emojis son felices? <br>
+        const emojis = ['😀', '😂', '😍', '😭', '🥺', '😎'] <br>
+        const todosSonFelices = emojis.every(emoji => emoji === '😀') <br>
+        console.log(todosSonFelices) // -> false <br><br>
+
+        // ¿Todos los números son pares? <br>
+        const numbers = [2, 4, 7, 10, 12] <br>
+        const todosSonPares = numbers.every(number => number % 2 === 0) <br>
+        console.log(todosSonPares) // -> false <br><br>
+
+        // ¿Todos los strings son mayores a 3 caracteres? <br>
+        const names = ['Miguel', 'Juan', 'Itziar', 'Isabel'] <br>
+        const todosLosNombresSonLargos = names.every(name => name.length > 3) <br>
+        console.log(todosLosNombresSonLargos) // -> true
+
+    </strong></p>
+    <p>
+        Al igual que some, el método every deja de iterar sobre el Array en cuanto encuentra un elemento que no cumple con la condición.
+    </p>
+    <h3 class="metodo" >(5) find: Devuelve el primer elemento que cumple con la condición</h3>
+    <p>
+        El método find te permite encontrar el primer elemento que cumple con una condición. Lo interesante es que este método te devuelve el elemento en sí, no un valor booleano como some y every. Aunque el funcionamiento es igual: hay que pasarle una función como argumento que retorne un valor booleano.
+    </p>
+    <p class="codigo"><strong>
+        const numbers = [13, 27, 44, -10, 81] <br>
+       // encuentra el primer número negativo <br>
+        const firstNegativeNumber = numbers.find(number => number < 0) <br><br>
+
+        console.log(firstNegativeNumber) // -> -10
+    </strong></p>
+    <p>
+        Si no encuentra ningún elemento que cumpla con la condición, el método find retorna undefined.
+    </p>
+    <p class="codigo"><strong>
+        const numbers = [13, 27, 44, 81] <br>
+        // encuentra el primer número negativo <br>
+        const firstNegativeNumber = numbers.find(number => number < 0) <br><br>
+
+        console.log(firstNegativeNumber) // -> undefined
+    </strong></p>
+    <p>
+        De nuevo, igual que some y every, el método find deja de iterar sobre el Array en cuanto encuentra un elemento que cumple con la condición.
+    </p>
+    <h3 class="metodo">(6) findIndex: Devuelve el índice del primer elemento que cumple con la condición</h3>
+    <p>
+        El método findIndex es similar a find, pero en lugar de devolver el elemento que cumple con la condición, devuelve el índice de ese elemento.
+    </p>
+    <p class="codigo"><strong>
+        const numbers = [13, 27, 44, -10, 81] <br><br>
+
+        // encuentra el índice del primer número negativo <br>
+        const firstNegativeNumberIndex = numbers.findIndex(number => number < 0) <br><br>
+
+        console.log(firstNegativeNumberIndex) // -> 3 <br><br>
+
+        // ahora puedes usar el índice para acceder al elemento <br>
+        console.log(numbers[firstNegativeNumberIndex]) // -> -10
+    </strong></p>
+    <p>
+        Si no encuentra ningún elemento que cumpla con la condición, el método findIndex retorna -1.
+    </p>
+    <p><strong>
+        const numbers = [13, 27, 44, 81] <br><br>
+
+        // encuentra el índice del primer número negativo <br>
+        const firstNegativeNumberIndex = numbers.findIndex(number => number < 0) <br><br>
+
+        console.log(firstNegativeNumberIndex) // -> -1
+    </strong></p>
+    <h4>EJERCICIO</h4>
+    <p>
+        Crear una función que reciba un array de palabras y devuelva true si todas las palabras terminan con la letra "a" y false si al menos una palabra no termina con la letra "a".
+
+
+        Usa el método endsWith() de string para resolverlo.
+        <a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/String/endsWith">método endsWith()</a>
+    </p>
+    <p>
+        function acabanEnA(words) { <br>
+            // tu código aquí <br>
+        }
+    </p>
+
+
+
+    <script src="practica11.js"></script>
+</body>
+</html>

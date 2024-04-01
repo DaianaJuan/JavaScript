@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilosFunciones.css">
+    <title>Funciones-1</title>
+</head>
+<body>
+    <header>
+        <h3>----------MENÚ----------</h3>
+        <nav>
+            <ol>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="index1.html">Condicionales</a></li>
+                <li><a href="index1-1.html">Ejercicios de Condicionales</a></li>
+                <li><a href="index2.html">Bucles-1-While</a></li>
+                <li><a href="index3.html">Bucles-2-Switch</a></li>
+                <li><a href="index4.html">Funciones-1</a></li>
+                <li><a href="index5.html">Funciones-2</a></li>
+                <li><a href="index6.html">Funciones Flecha</a></li>
+                <li><a href="index7.html">Recursividad</a></li>
+                <li><a href="index8.html">Arrays-1-Intro</a></li>
+                <li><a href="index9.html">Arrays-2-Métodos</a></li>
+                <li><a href="index10.html">Arrays-3-Iteración y recorridos de arrays</a></li>
+                <li><a href="index11.html">Arrays-4-Buscar en arrays</a></li>
+                <li><a href="index12.html">Arrays-5-Ordenar arrays</a></li>
+                <li><a href="index13.html">Arrays-6-filterYmap</a></li>
+                <li><a href="index14.html">Arrays-7-Matriz</a></li>
+                <li><a href="index15.html">Arrays-8-Algoritmos con arrays</a></li>
+            </ol>
+            <a href="https://www.aulascript.com/evaluar/ejercicios_basicos_1.htm">Página de ejercicios - principiantes</a><br>
+            <a href="https://github.com/DesafioLatam/guia-de-ejercicios-javascript/blob/master/ejercicios.md">Página de ejercicios Latam</a>   
+        </nav>
+        <h3>------------------------</h3>
+    </header>
+
+    <h1>FUNCIONES-1</h1>
+    <p>Una función es un bloque de código que realiza una tarea específica cuando se llama. 
+        Puedes pensar en una función como en un microondas: le das algo para cocinar, le pasas 
+        algunos parámetros (como el tiempo y la potencia) y luego hace su trabajo y te devuelve el resultado.
+    </p>
+    <p>En JavaScript, las funciones se pueden definir de varias maneras, pero la forma más común y básica es 
+        mediante la palabra clave function.
+    </p>
+    <p class="codigo"><strong>
+        function saludar() { <br>
+            console.log('Hola Miguel') <br>
+        }
+    </strong></p>
+    <h3>Declarar una función</h3>
+    <ul>
+        <li>La palabra reservada function que indica que estamos definiendo una función.</li>
+        <li>El nombre de la función, en este caso saludar. Normalmente usamos verbos para nombrar 
+            funciones, ya que son acciones que realizan.</li>
+        <li>Un par de paréntesis () después del nombre. Pueden contener parámetros. En este caso, no tenemos ninguno.</li>
+        <li>Un bloque de código entre llaves {}. En este caso, solo tenemos una línea de código, pero podríamos 
+            tener muchas más.</li>
+    </ul>
+    <p>Para llamar a una función, simplemente escribimos su nombre seguido de paréntesis:</p>
+    <p class="codigo"><strong>saludar() // -> Hola Miguel</strong></p>
+    <h3>Devolviendo un resultado</h3>
+    <p>Las funciones pueden devolver un resultado. Para ello, utilizamos la palabra reservada return y después el 
+        valor que queremos devolver:
+    </p>
+    <p class="codigo"><strong>
+        function sumar() { <br>
+            return 1 + 1 <br>
+        } <br>
+    </strong></p>
+    <p>Ahora, cada vez que llamemos a la función sumar, nos devolverá el resultado de la suma:</p>
+    <p class="codigo"><strong>
+        // podemos guardar el resultado en una variable <br>
+        const resultado = sumar() <br>
+
+       // o ver en consola directamente el resultado <br>
+       console.log(sumar()) // -> 2 <br>
+    </strong></p>
+    <p>Recuerda, si no utilizamos return, la función devolverá undefined.</p>
+    <h3>Una función realmente útil</h3>
+    <p>La función saludar y sumar no parecen muy útiles, pero con lo poco que sabemos ya podemos hacer cosas más 
+        productivas. Por ejemplo, podemos crear una función que nos devuelva un número aleatorio del 1 al 10.
+    </p>
+    <p>Para ello vamos a descubrir Math, un objeto incorporado en JavaScript que tiene propiedades y métodos para 
+        constantes y funciones matemáticas. Vamos a ver dos métodos que nos van a ser muy útiles:
+    </p>
+    <ul>
+        <li><strong>Math.random()</strong>: devuelve un número aleatorio entre 0 y 1, con decimales.</li>
+        <li><strong>Math.floor()</strong>: redondea un número hacia abajo.</li>
+    </ul>
+    <p>Math.random es parecido a console.log, en el sentido que son métodos que JavaScript incorpora de serie y 
+        que podemos utilizar en cualquier punto de nuestro programa.
+    </p>
+
+
+
+
+
+
+    <script src="practica4.js"></script>
+</body>
+</html>

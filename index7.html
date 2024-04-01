@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilosFunciones.css">
+    <title>Recursividad</title>
+</head>
+<body>
+    <header>
+        <h3>----------MENÚ----------</h3>
+        <nav>
+            <ol>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="index1.html">Condicionales</a></li>
+                <li><a href="index1-1.html">Ejercicios de Condicionales</a></li>
+                <li><a href="index2.html">Bucles-1-While</a></li>
+                <li><a href="index3.html">Bucles-2-Switch</a></li>
+                <li><a href="index4.html">Funciones-1</a></li>
+                <li><a href="index5.html">Funciones-2</a></li>
+                <li><a href="index6.html">Funciones Flecha</a></li>
+                <li><a href="index7.html">Recursividad</a></li>
+                <li><a href="index8.html">Arrays-1-Intro</a></li>
+                <li><a href="index9.html">Arrays-2-Métodos</a></li>
+                <li><a href="index10.html">Arrays-3-Iteración y recorridos de arrays</a></li>
+                <li><a href="index11.html">Arrays-4-Buscar en arrays</a></li>
+                <li><a href="index12.html">Arrays-5-Ordenar arrays</a></li>
+                <li><a href="index13.html">Arrays-6-filterYmap</a></li>
+                <li><a href="index14.html">Arrays-7-Matriz</a></li>
+                <li><a href="index15.html">Arrays-8-Algoritmos con arrays</a></li>
+            </ol>
+            <a href="https://www.aulascript.com/evaluar/ejercicios_basicos_1.htm">Página de ejercicios - principiantes</a><br>
+            <a href="https://github.com/DesafioLatam/guia-de-ejercicios-javascript/blob/master/ejercicios.md">Página de ejercicios Latam</a>   
+        </nav>
+        <h3>------------------------</h3>
+    </header>
+
+    <h1>RECURSIVIDAD</h1>
+    <p>
+        La recursividad es una técnica de programación que consiste en que una función se llame a sí misma.
+    </p>
+    <p>
+        Si una función se llama a sí misma, ¿cuándo termina? ¿cómo se evita que se llame infinitamente? Con una condición base.
+    </p>
+    <p>
+        ¡Cuidado! Si no ponemos la condición base, la función se llamará infinitamente y el navegador se quedará bloqueado. Cuando hacemos recursividad SIEMPRE hay que tener una condición que haga que la función salga de sí misma.
+    </p>
+    <h3>Usando recursividad y devolviendo un valor</h3>
+    <p>
+        La recursividad se usa muchas veces para solucionar algoritmos. Por ejemplo, vamos a crear una función que calcule el factorial de un número. <br>
+        "VER EJEMPLO EN CONSOLA Y JS"
+    </p>
+    <h3>EJERCICIOS</h3>
+    <ol>
+        <li>
+            Escribe una función que calcule la suma de los primeros n números enteros de forma recursiva. Por ejemplo: suma(3) -> 1 + 2 + 3 = 6
+        </li><br>
+        <li>
+            Escribe una función que calcule la sucesión de Fibonacci de forma recursiva. La sucesión de Fibonacci es una serie de números que empieza por 0 y 1 y cada número es la suma de los dos anteriores. Por ejemplo: fibonacci(6) -> 8 (0, 1, 1, 2, 3, 5, 8)
+        </li>
+    </ol>
+
+    <h4>NOTAS - Ejercicio Fibonacci</h4>
+    <p>
+        La función isNaN() en JavaScript significa "is Not a Number" (no es un número). Toma un argumento y devuelve true si el argumento no es un número; de lo contrario, devuelve false.
+    </p>
+    <p>
+        VERIFICACIÓN EN EL BUCLE WHILDE: además de verificar si el número es mayor que 0 y si es un número válido (usando isNaN()), también estamos utilizando Number.isInteger() para asegurarnos de que el número ingresado sea un entero. Si el número no es válido, se muestra un mensaje de alerta y se solicita al usuario que ingrese un número entero mayor que 0. El bucle se repetirá hasta que el usuario ingrese un número que cumpla con todas las condiciones especificadas.
+    </p>
+    
+
+
+        <script src="practica7.js"></script>
+</body>
+</html>

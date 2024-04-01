@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilosFunciones.css">
+    <title>Funciones Flecha</title>
+</head>
+<body>
+    <header>
+        <h3>----------MENÚ----------</h3>
+        <nav>
+            <ol>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="index1.html">Condicionales</a></li>
+                <li><a href="index1-1.html">Ejercicios de Condicionales</a></li>
+                <li><a href="index2.html">Bucles-1-While</a></li>
+                <li><a href="index3.html">Bucles-2-Switch</a></li>
+                <li><a href="index4.html">Funciones-1</a></li>
+                <li><a href="index5.html">Funciones-2</a></li>
+                <li><a href="index6.html">Funciones Flecha</a></li>
+                <li><a href="index7.html">Recursividad</a></li>
+                <li><a href="index8.html">Arrays-1-Intro</a></li>
+                <li><a href="index9.html">Arrays-2-Métodos</a></li>
+                <li><a href="index10.html">Arrays-3-Iteración y recorridos de arrays</a></li>
+                <li><a href="index11.html">Arrays-4-Buscar en arrays</a></li>
+                <li><a href="index12.html">Arrays-5-Ordenar arrays</a></li>
+                <li><a href="index13.html">Arrays-6-filterYmap</a></li>
+                <li><a href="index14.html">Arrays-7-Matriz</a></li>
+                <li><a href="index15.html">Arrays-8-Algoritmos con arrays</a></li>
+            </ol>
+            <a href="https://www.aulascript.com/evaluar/ejercicios_basicos_1.htm">Página de ejercicios - principiantes</a><br>
+            <a href="https://github.com/DesafioLatam/guia-de-ejercicios-javascript/blob/master/ejercicios.md">Página de ejercicios Latam</a>   
+        </nav>
+        <h3>------------------------</h3>
+    </header>
+
+    <h1>FUNCIONES FLECHA</h1>
+    <p>También conocidas como arrow functions en inglés.</p>
+    <p>Las funciones flecha son una forma más concisa de crear funciones en JavaScript, y se han vuelto muy populares 
+        en los últimos años debido a su sintaxis simplificada.
+    </p>
+    <p>La sintaxis básica de una función flecha es la siguiente:</p>
+    <p class="codigo"><strong>
+
+        const miFuncionFlecha = () => { <br>
+            // código a ejecutar <br>
+        }
+
+    </strong></p>
+    <p>
+        Las funciones flecha son siempre funciones anónimas y function expressions. Esto significa que no tienen nombre y que se asignan a una variable.
+    </p>
+    <p>
+        En lugar de la palabra clave function, utilizamos una flecha => para definir la función. También podemos omitir los paréntesis alrededor de los parámetros si solo tenemos uno:
+    </p>
+    <p class="codigo"><strong>
+        const saludar = nombre => { <br>
+            console.log("Hola " + nombre) <br>
+        }
+    </strong></p>
+    <h3>Ventajas de las funciones flecha</h3>
+    <p>Las funciones flecha tienen varias ventajas sobre las funciones regulares en JavaScript. Algunas son:</p>
+    <ul>
+        <li><strong>Sintaxis más concisa:</strong> la sintaxis de las funciones flecha es más corta y más fácil de leer 
+        que la sintaxis de las funciones regulares, especialmente cuando se trabaja con funciones de una sola línea.</li>
+        <li><strong>Return implícito:</strong>las funciones flecha puede devolver el valor de la expresión sin usar la 
+        palabra clave return cuando son de una sola línea. Esto hace que las funciones flecha sean aún más cortas y más 
+        fáciles de leer.</li>
+        <li><strong>Funciones anónimas más legibles:</strong>las funciones flecha son una forma más legible y concisa de 
+        crear funciones anónimas en JavaScript, lo cual puede hacer que nuestro código sea más fácil de entender.</li>
+    </ul>
+    <h3>Return implícito</h3>
+    <p>Cuando una función flecha tiene una sola expresión, podemos omitir las llaves {} y la palabra clave return para hacerla aún más corta. Esto se conoce como return implícito.</p>
+
+<script src="practica6.js"></script>
+</body>
+</html>

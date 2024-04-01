@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilosArrays.css">
+    <title>Arrays-1</title>
+</head>
+<body>
+    <header>
+        <h3>----------MENÚ----------</h3>
+        <nav>
+            <ol>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="index1.html">Condicionales</a></li>
+                <li><a href="index1-1.html">Ejercicios de Condicionales</a></li>
+                <li><a href="index2.html">Bucles-1-While</a></li>
+                <li><a href="index3.html">Bucles-2-Switch</a></li>
+                <li><a href="index4.html">Funciones-1</a></li>
+                <li><a href="index5.html">Funciones-2</a></li>
+                <li><a href="index6.html">Funciones Flecha</a></li>
+                <li><a href="index7.html">Recursividad</a></li>
+                <li><a href="index8.html">Arrays-1-Intro</a></li>
+                <li><a href="index9.html">Arrays-2-Métodos</a></li>
+                <li><a href="index10.html">Arrays-3-Iteración y recorridos de arrays</a></li>
+                <li><a href="index11.html">Arrays-4-Buscar en arrays</a></li>
+                <li><a href="index12.html">Arrays-5-Ordenar arrays</a></li>
+                <li><a href="index13.html">Arrays-6-filterYmap</a></li>
+                <li><a href="index14.html">Arrays-7-Matriz</a></li>
+                <li><a href="index15.html">Arrays-8-Algoritmos con arrays</a></li>
+            </ol>
+            <a href="https://www.aulascript.com/evaluar/ejercicios_basicos_1.htm">Página de ejercicios - principiantes</a><br>
+            <a href="https://github.com/DesafioLatam/guia-de-ejercicios-javascript/blob/master/ejercicios.md">Página de ejercicios Latam</a>   
+        </nav>
+        <h3>------------------------</h3>
+    </header>
+
+    <h1>ARRAYS-1</h1>
+    <p>
+        Hasta ahora hemos visto algunos tipos de datos. Cadenas de texto, números, booleanos... Pero... ¿Qué pasa si queremos tener una colección de ellos? En JavaScript tenemos los arrays.
+    </p>
+    <h3>Declaración y asignación de arrays</h3>
+    <p>
+        Para declarar un array usamos los corchetes [] y dentro los elementos de la colección separados por comas ,.
+    </p>
+    <p>
+        Por ejemplo, para crear una colección de números del 1 al 5:
+    </p>
+    <p class="codigo"><strong>
+        [1, 2, 3, 4, 5]
+    </strong></p>
+    <p>
+        Los elementos de un array pueden ser de cualquier tipo, incluso otros arrays.
+    </p>
+    <p class="codigo"><strong>
+        [1, 2, 3, 4, [5, 6, 7, 8, 9]]
+    </strong></p>
+    <p>
+        Y, aunque no siempre sea recomendable, puedes mezclar tipos de datos dentro:
+    </p>
+    <p class="codigo"><strong>
+        ['uno', 2, true, null, undefined]
+    </strong></p>
+    <h4>Para asignar un array a una variable, lo hacemos igual que con los otros tipos de datos:</h4>
+    <p class="codigo"><strong>
+        const numbers = [1, 2, 3, 4, 5] <br>
+        let names = ['Dani', 'Miguel', 'Maria']
+    </strong></p>
+    <h3>Acceso a los elementos de un array</h3>
+    <p>
+        Para acceder a los elementos de un array usamos los corchetes [] y dentro el índice del elemento que queremos acceder. Los índices empiezan en 0.
+    </p>
+    <p class="codigo"><strong>
+        const numbers = [1, 2, 3, 4, 5] <br>
+
+        console.log(numbers[0]) // 1 <br>
+        console.log(numbers[2]) // 3
+    </strong></p>
+    <p>
+        El índice es la posición del elemento dentro del array. El primer elemento tiene índice 0, el segundo índice 1, el tercero índice 2...
+    </p>
+    <h3>Si intentamos acceder a un elemento que no existe, nos devolverá undefined.</h3>
+    <p class="codigo"><strong>
+        const numbers = [1, 2, 3, 4, 5]  <br>
+
+        console.log(numbers[10]) // undefined
+    </strong></p>
+    <p>
+        Puedes usar variables para acceder a los elementos de un array.
+    </p>
+    <p class="codigo"><strong>
+        const numbers = [1, 2, 3, 4, 5] <br>
+        let index = 2 <br>
+
+        console.log(numbers[index]) // 3
+    </strong></p>
+    <h3>Modificar elementos de un array</h3>
+    <p>
+        Igual que podemos acceder a los elementos de un array, podemos modificarlos.
+    </p>
+    <p class="codigo"><strong>
+        const numbers = [1, 2, 3, 4, 5] <br>
+        
+        numbers[0] = 10 <br>
+        numbers[2] = 30 <br>
+
+        console.log(numbers) // [10, 2, 30, 4, 5]
+    </strong></p>
+    <p>
+        ¿Cómo es que pese a que hemos indicado que es una constante const podemos modificar el Array? Aunque hay una explicación mucho más larga, que veremos más adelante, la respuesta corta es que const sólo impide que se reasigne el valor de la variable, no que se modifique el valor en sí.
+    </p>
+
+
+
+
+    <script src="practica8.js"></script>
+</body>
+</html>

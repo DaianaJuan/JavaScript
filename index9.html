@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilosArrays.css">
+    <title>Arrays-2</title>
+</head>
+<body>
+    <header>
+        <h3>----------MENÚ----------</h3>
+        <nav>
+            <ol>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="index1.html">Condicionales</a></li>
+                <li><a href="index1-1.html">Ejercicios de Condicionales</a></li>
+                <li><a href="index2.html">Bucles-1-While</a></li>
+                <li><a href="index3.html">Bucles-2-Switch</a></li>
+                <li><a href="index4.html">Funciones-1</a></li>
+                <li><a href="index5.html">Funciones-2</a></li>
+                <li><a href="index6.html">Funciones Flecha</a></li>
+                <li><a href="index7.html">Recursividad</a></li>
+                <li><a href="index8.html">Arrays-1-Intro</a></li>
+                <li><a href="index9.html">Arrays-2-Métodos</a></li>
+                <li><a href="index10.html">Arrays-3-Iteración y recorridos de arrays</a></li>
+                <li><a href="index11.html">Arrays-4-Buscar en arrays</a></li>
+                <li><a href="index12.html">Arrays-5-Ordenar arrays</a></li>
+                <li><a href="index13.html">Arrays-6-filterYmap</a></li>
+                <li><a href="index14.html">Arrays-7-Matriz</a></li>
+                <li><a href="index15.html">Arrays-8-Algoritmos con arrays</a></li>
+            </ol>
+            <a href="https://www.aulascript.com/evaluar/ejercicios_basicos_1.htm">Página de ejercicios - principiantes</a><br>
+            <a href="https://github.com/DesafioLatam/guia-de-ejercicios-javascript/blob/master/ejercicios.md">Página de ejercicios Latam</a>   
+        </nav>
+        <h3>------------------------</h3>
+    </header>
+
+    <h1>Arrays-2</h1>
+    <h2>Métodos y propiedades de Array</h2>
+    <p>
+        Los arrays de JavaScript tienen una serie de métodos y propiedades que nos permiten trabajar con ellos de forma sencilla.
+    </p>
+    <p><strong>
+        Un método es una función que se ejecuta sobre un objeto. Una propiedad es una variable que pertenece a un objeto. En este caso, el objeto es un array.
+    </strong></p>
+    <h3>La longitud de un array</h3>
+    <p>
+        Puedes conocer la longitud de una colección de elementos usando la propiedad <strong>.length</strong>:
+    </p>
+    <p class="codigo"><strong>
+
+        const frutas = ["manzana", "pera", "plátano", "fresa"] <br>
+        console.log(frutas.length) // 4
+
+    </strong></p>
+    <p>
+        También puedes cortar su longitud asignando un nuevo valor a la propiedad .length:
+    </p>
+    <p class="codigo"><strong>
+
+        const frutas = ["manzana", "pera", "plátano", "fresa"] <br>
+        frutas.length = 2 <br>
+
+        console.log(frutas) // ["manzana", "pera"] <br>
+        console.log(frutas.length) // 2
+
+    </strong></p>
+    <h3>Métodos de arrays</h3>
+    <p>
+        Cuando trabajamos con colecciones de elementos, vamos a querer hacer cosas con ellos. Por ejemplo: añadir un elemento, eliminarlo, buscarlo, etc. Para ello, los arrays tienen una serie de métodos que nos permiten hacer estas operaciones:
+    </p>
+    <h3 class="metodos">.push()</h3>
+    <p>
+        El método .push() nos permite añadir un elemento al final de un array:
+    </p>
+    <p class="codigo"><strong>
+
+        const frutas = ["plátano", "fresa"] <br>
+        frutas.push("naranja") <br>
+        console.log(frutas) // ["plátano", "fresa", "naranja"]
+
+    </strong></p>
+    <p>
+        Además, el método .push() devuelve la nueva longitud del array:
+    </p>
+    <p class="codigo"><strong>
+
+        const frutas = ["plátano", "fresa"] <br>
+        console.log(frutas.length) // 2 <br>
+
+        const newLength = frutas.push("naranja") <br>
+        console.log(newLength) // 3 <br>
+        console.log(frutas) // ["plátano", "fresa", "naranja"]
+
+    </strong></p>
+    <h3 class="metodos">.pop()</h3>
+    <p>
+        El método .pop() elimina y devuelve el último elemento de un array:
+    </p>
+    <p class="codigo"><strong>
+        const frutas = ["plátano", "fresa", "naranja"] <br>
+        const ultimaFruta = frutas.pop() <br>
+
+        console.log(frutas) // ["plátano", "fresa"] <br>
+        console.log(ultimaFruta) // "naranja"
+    </strong></p>
+    <h3 class="metodos">.shift()</h3>
+    <p>
+        El método .shift() elimina y devuelve el primer elemento de un array. Es lo mismo que .pop(), pero con el primer elemento en lugar del último:
+    </p>
+    <p class="codigo"><strong>
+
+        const frutas = ["plátano", "fresa", "naranja"] <br>
+        const primeraFruta = frutas.shift() <br>
+
+        console.log(frutas) // ["fresa", "naranja"] <br>
+        console.log(primeraFruta) // "plátano"
+
+    </strong></p>
+    <h3 class="metodos">.unshift()</h3>
+    <p>
+        El método .unshift() añade un elemento al principio de un array. Es lo mismo que .push(), pero con el primer elemento en lugar del último:
+    </p>
+    <p class="codigo"><strong>
+
+        const frutas = ["plátano", "fresa", "naranja"] <br>
+        frutas.unshift("manzana") <br>
+
+        console.log(frutas) // ["manzana", "plátano", "fresa", "naranja"]
+
+    </strong></p>
+    <h3>Concatenar arrays</h3>
+    <h3 class="metodos">.concat()</h3>
+    <p class="codigo"><strong>
+        const numbers = [1, 2, 3] <br>
+        const numbers2 = [4, 5] <br>
+
+        const allNumbers = numbers.concat(numbers2) <br>
+
+        console.log(allNumbers) // [1, 2, 3, 4, 5]
+    </strong></p>
+    <p>
+        Otra forma de concatenar arrays es usando el operador ... (spread operator). Este operador propaga los elementos de un array. Así que podríamos hacer lo siguiente:
+    </p>
+    <p class="codigo"><strong>
+        const numbers = [1, 2, 3] <br>
+        const numbers2 = [4, 5] <br>
+
+        //                    1, 2, 3        4, 5     <br>               
+        const allNumbers = [...numbers, ...numbers2]  <br>
+
+        console.log(allNumbers) // [1, 2, 3, 4, 5]
+    </strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="practica9.js"></script>
+</body>
+</html>
